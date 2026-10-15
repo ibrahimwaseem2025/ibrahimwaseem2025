@@ -1,6 +1,15 @@
 <!-- TOP HTML GIF BANNER & HUD ICONS -->
 
 
+<p align="center">
+
+  <code>Simplicity is prerequisite for reliability. // SYSTEM_READY</code>
+  <br><br>
+  <img src="dna.svg" width="100%" alt="Animated DNA telemetry">
+  <br><br>
+</p>
+
+
 <p>
   <samp>
     <span style="color:#00ff66">iboo@Fedora:~$ sudo cat /home/iboo/ABOUTME.md
@@ -8,20 +17,12 @@
   </samp>
 </p>
 
-
+<br><br>
 
 <p align="center">
-  <img src="matrix.svg" width="100%" alt="Animated Matrix glyph rain">
   <br><br>
-  <code>Simplicity is prerequisite for reliability. // SYSTEM_READY</code>
+  <img src="info_rose.svg" width="100%" alt="Animated DNA telemetry">
   <br><br>
-  <img src="dna.svg" width="100%" alt="Animated DNA telemetry">
-  <br><br>
-  <img src="https://img.shields.io/badge/SYSTEM-SYSTEM_DIAGNOSTIC-050505?style=for-the-badge&logo=gnu-bash&logoColor=00ff66">
-  <img src="https://img.shields.io/badge/OPERATOR-I.%20WASEEM-050505?style=for-the-badge&logo=git&logoColor=00f0ff">
-  <img src="https://img.shields.io/badge/LOCATION-MALE%2C%20MALDIVES-050505?style=for-the-badge&logo=linux&logoColor=00ff66">
-  <br><br>
-  <img src="telemetry.svg" width="100%" alt="Animated telemetry waveforms">
 </p>
 
 ```text
