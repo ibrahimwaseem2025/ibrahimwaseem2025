@@ -1,10 +1,11 @@
 <!-- TOP HTML GIF BANNER & HUD ICONS -->
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-8411-37d70e0f3162.gif" width="100%" />
-  <br>
-  <img src="https://img.shields.io/badge/%E5%BC%80%E5%8F%91%E7%B3%BB%E7%B3%F-SYSTEM_DIAGNOSTIC-000000?style=for-the-badge&logo=gnu-bash&logoColor=00ff66&labelColor=050505" />
-  <img src="https://img.shields.io/badge/OPERATOR-I.%20WASEEM-000000?style=for-the-badge&logo=git&logoColor=f59e0b&labelColor=050505" />
-  <img src="https://img.shields.io/badge/LOC-MALE%2C_MALDIVES-000000?style=for-the-badge&logo=map&logoColor=00f0ff&labelColor=050505" />
+
+
+<p>
+  <samp>
+    <span style="color:#00ff66">iboo@Fedora:~$ sudo cat /home/iboo/ABOUTME.md
+</span>
+  </samp>
 </p>
 
 ```text
