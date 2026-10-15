@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="220" viewBox="0 0 1200 220">
+<rect width="1200" height="220" rx="8" fill="#030909"/>
+<g stroke="#00f0ff" stroke-opacity=".15"><path d="M30 40H1170 M30 80H1170 M30 120H1170 M30 160H1170 M30 200H1170"/><path d="M100 20V200 M200 20V200 M300 20V200 M400 20V200 M500 20V200 M600 20V200 M700 20V200 M800 20V200 M900 20V200 M1000 20V200 M1100 20V200"/></g>
+<text x="24" y="24" fill="#00ff66" font-family="monospace" font-size="14">LIVE TELEMETRY // SIMULATED SIGNAL</text>
+<path d="M30 110 Q70 65 110 110 T190 110 T270 110 T350 110 T430 110 T510 110 T590 110 T670 110 T750 110 T830 110 T910 110 T990 110 T1070 110 T1170 110" fill="none" stroke="#00f0ff" stroke-width="2" stroke-dasharray="12 5">
+<animate attributeName="stroke-dashoffset" values="0;-100" dur="3s" repeatCount="indefinite"/></path>
+<path d="M30 150 Q70 120 110 150 T190 150 T270 150 T350 150 T430 150 T510 150 T590 150 T670 150 T750 150 T830 150 T910 150 T990 150 T1070 150 T1170 150" fill="none" stroke="#00ff66" stroke-width="2">
+<animate attributeName="d" dur="2.5s" repeatCount="indefinite" values="M30 150 Q70 120 110 150 T190 150 T270 150 T350 150 T430 150 T510 150 T590 150 T670 150 T750 150 T830 150 T910 150 T990 150 T1070 150 T1170 150;M30 150 Q70 180 110 150 T190 150 T270 150 T350 150 T430 150 T510 150 T590 150 T670 150 T750 150 T830 150 T910 150 T990 150 T1070 150 T1170 150;M30 150 Q70 120 110 150 T190 150 T270 150 T350 150 T430 150 T510 150 T590 150 T670 150 T750 150 T830 150 T910 150 T990 150 T1070 150 T1170 150"/></path>
+<path d="M30 180 Q70 195 110 180 T190 180 T270 180 T350 180 T430 180 T510 180 T590 180 T670 180 T750 180 T830 180 T910 180 T990 180 T1070 180 T1170 180" fill="none" stroke="#a855f7" stroke-width="2"><animate attributeName="opacity" values="1;.25;1" dur="2.7s" repeatCount="indefinite"/></path>
+<rect x="1" y="1" width="1198" height="218" rx="8" fill="none" stroke="#00f0ff" stroke-opacity=".65"/>
+</svg>
