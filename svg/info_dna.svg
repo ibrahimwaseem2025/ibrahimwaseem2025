@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="920"
+     height="360"
+     viewBox="0 0 920 360">
+
+  <defs>
+    <linearGradient id="strand" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff7777"/>
+      <stop offset="50%" stop-color="#ff3333"/>
+      <stop offset="100%" stop-color="#990000"/>
+    </linearGradient>
+
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#130909"/>
+      <stop offset="100%" stop-color="#080808"/>
+    </linearGradient>
+
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .mono {
+      font-family: "JetBrains Mono", "Fira Code", Consolas, monospace;
+      }
+
+      .heading {
+      fill: #ff4545;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      }
+
+      .label {
+      fill: #ff5555;
+      font-size: 12px;
+      font-weight: 700;
+      }
+
+      .value {
+      fill: #dedede;
+      font-size: 12px;
+      }
+
+      .muted {
+      fill: #777777;
+      font-size: 10px;
+      }
+
+      .strand {
+      fill: none;
+      stroke: url(#strand);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 18 7;
+      animation: flow 3s linear infinite;
+      }
+
+      .strand-back {
+      fill: none;
+      stroke: #8c1717;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-dasharray: 7 12;
+      animation: flow 4s linear infinite reverse;
+      }
+
+      .rung {
+      stroke: #ff4141;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      opacity: .55;
+      transform-box: fill-box;
+      transform-origin: center;
+      animation: pulse 2.4s ease-in-out infinite;
+      }
+
+      .rung:nth-child(3n) {
+      animation-delay: -.8s;
+      }
+
+      .rung:nth-child(3n + 1) {
+      animation-delay: -1.6s;
+      }
+
+      .scan {
+      animation: scan 5s ease-in-out infinite;
+      }
+
+      @keyframes flow {
+      to {
+      stroke-dashoffset: -100;
+      }
+      }
+
+      @keyframes pulse {
+      0%, 100% {
+      opacity: .25;
+      transform: scaleX(.45);
+      }
+      50% {
+      opacity: .9;
+      transform: scaleX(1);
+      }
+      }
+
+      @keyframes scan {
+      0%, 100% {
+      opacity: .12;
+      }
+      50% {
+      opacity: .35;
+      }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+      .strand, .strand-back, .rung, .scan {
+      animation: none;
+      }
+      }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="920" height="360" rx="8" fill="#080808"/>
+  <rect x="1" y="1" width="918" height="358" rx="8"
+        fill="none" stroke="#351414"/>
+
+  <!-- Subtle background details -->
+  <g stroke="#ffffff" stroke-opacity=".025">
+    <path d="M0 40H920 M0 80H920 M0 120H920
+          M0 160H920 M0 200H920 M0 240H920
+          M0 280H920 M0 320H920"/>
+    </g>
+
+    <g class="scan" fill="#ff3333">
+      <rect x="0" y="0" width="920" height="2"/>
+    </g>
+
+    <!-- LEFT: DNA HELIX -->
+    <g transform="translate(120 180)" filter="url(#glow)">
+
+      <!-- Base pairs -->
+      <g>
+        <line class="rung" x1="-34" y1="-142" x2="34" y2="-142"/>
+        <line class="rung" x1="-52" y1="-122" x2="52" y2="-122"/>
+        <line class="rung" x1="-66" y1="-102" x2="66" y2="-102"/>
+        <line class="rung" x1="-67" y1="-82" x2="67" y2="-82"/>
+        <line class="rung" x1="-53" y1="-62" x2="53" y2="-62"/>
+        <line class="rung" x1="-33" y1="-42" x2="33" y2="-42"/>
+        <line class="rung" x1="-20" y1="-22" x2="20" y2="-22"/>
+        <line class="rung" x1="-20" y1="-2" x2="20" y2="-2"/>
+        <line class="rung" x1="-33" y1="18" x2="33" y2="18"/>
+        <line class="rung" x1="-53" y1="38" x2="53" y2="38"/>
+        <line class="rung" x1="-67" y1="58" x2="67" y2="58"/>
+        <line class="rung" x1="-66" y1="78" x2="66" y2="78"/>
+        <line class="rung" x1="-52" y1="98" x2="52" y2="98"/>
+        <line class="rung" x1="-34" y1="118" x2="34" y2="118"/>
+        <line class="rung" x1="-20" y1="138" x2="20" y2="138"/>
+      </g>
+
+      <!-- First strand -->
+      <path class="strand"
+            d="M0 -160
+            C90 -120 90 -80 0 -40
+            C-90 0 -90 40 0 80
+            C90 120 90 160 0 180"/>
+
+      <!-- Second strand -->
+      <path class="strand-back"
+            d="M0 -160
+            C-90 -120 -90 -80 0 -40
+            C90 0 90 40 0 80
+            C-90 120 -90 160 0 180"/>
+      </g>
+
+      <!-- DNA label -->
+      <g class="mono" text-anchor="middle">
+        <text x="120" y="332" fill="#ff4444"
+              font-size="10" letter-spacing="3">SYSTEM CORE</text>
+        <text x="120" y="346" fill="#555555"
+              font-size="8">BIOLOGY × COMPUTATION</text>
+        </g>
+
+        <!-- Vertical divider -->
+        <line x1="245" y1="30" x2="245" y2="330"
+              stroke="#482020" stroke-width="1"/>
+
+        <!-- RIGHT: SYSTEM INFORMATION -->
+        <g transform="translate(278 34)" class="mono">
+
+          <!-- Header -->
+          <text x="0" y="0" class="heading">IBOO<tspan fill="#777777">@</tspan>FEDORA</text>
+
+          <text x="0" y="22" fill="#555555" font-size="10">
+            ─────────────────────────────────────────────
+          </text>
+
+          <!-- System -->
+          <text x="0" y="55" class="label">SYSTEM</text>
+          <text x="120" y="55" class="value">Fedora Linux / KDE Plasma</text>
+
+          <text x="0" y="81" class="label">SHELL</text>
+          <text x="120" y="81" class="value">Bash / Zsh</text>
+
+          <!-- Development -->
+          <text x="0" y="119" class="label">LANGUAGES</text>
+          <text x="120" y="119" class="value">Python · C# · PHP</text>
+
+          <text x="0" y="145" class="label">FRAMEWORKS</text>
+          <text x="120" y="145" class="value">Django · .NET · Laravel</text>
+
+          <text x="0" y="171" class="label">DATA</text>
+          <text x="120" y="171" class="value">PostgreSQL · MySQL</text>
+
+          <text x="0" y="197" class="label">FOCUS</text>
+          <text x="120" y="197" class="value">AI / ML · Computer Vision</text>
+
+          <text x="0" y="223" class="label">TOOLS</text>
+          <text x="120" y="223" class="value">Git · Docker · Podman · navi</text>
+
+          <!-- Status -->
+          <line x1="0" y1="246" x2="570" y2="246"
+                stroke="#351414"/>
+
+          <circle cx="5" cy="267" r="3" fill="#ff4545">
+            <animate attributeName="opacity"
+                     values="1;.25;1"
+                     dur="2s"
+                     repeatCount="indefinite"/>
+            </circle>
+
+            <text x="16" y="271" fill="#ff6666" font-size="10">
+              STATUS: BUILDING &amp; LEARNING
+            </text>
+
+            <text x="570" y="271" fill="#555555"
+                  font-size="9" text-anchor="end">MALDIVES</text>
+
+            </g>
+
+          </svg>

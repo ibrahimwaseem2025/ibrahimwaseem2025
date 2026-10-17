@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 530" width="100%" height="auto" role="img" aria-label="ML pipeline flow and deployment topology diagrams">
+  <defs>
+    <linearGradient id="panelBg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e0707"/>
+      <stop offset="100%" stop-color="#080606"/>
+    </linearGradient>
+    <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#ff4545"/>
+    </marker>
+    <marker id="arrowDim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8c1717"/>
+    </marker>
+    <style>
+      .mono { font-family: "JetBrains Mono", "Fira Code", Consolas, monospace; }
+      .panel-title { fill: #ff4444; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+      .panel-sub { fill: #885555; font-size: 9px; letter-spacing: 0.5px; }
+      .stage-name { fill: #f0d8d8; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+      .stage-sub { fill: #aa8888; font-size: 8px; }
+      .stage-index { fill: #553333; font-size: 7px; letter-spacing: 1px; }
+      .stage-metric { fill: #cccccc; font-size: 9px; }
+      .node-title { fill: #f0d8d8; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; }
+      .node-sub { fill: #aa8888; font-size: 8px; }
+      .conn-label { fill: #cc8888; font-size: 8px; font-style: italic; }
+      .muted { fill: #777777; font-size: 9px; }
+      .pulse-dot { animation: pulseDot 2.4s ease-in-out infinite; }
+      .pulse-dot-slow { animation: pulseDot 3.2s ease-in-out infinite; }
+      .flow-line { stroke-dasharray: 5 4; animation: flowDash 1.4s linear infinite; }
+      .scan { animation: scan 5s ease-in-out infinite; }
+      @keyframes scan { 0%,100%{opacity:.08} 50%{opacity:.28} }
+      @keyframes pulseDot { 0%,100%{opacity:1} 50%{opacity:.25} }
+      @keyframes flowDash { to { stroke-dashoffset: -18; } }
+      @media (prefers-reduced-motion: reduce) { .flow-line,.scan,.pulse-dot,.pulse-dot-slow { animation: none; } }
+    </style>
+  </defs>
+
+  <rect width="920" height="530" fill="#080808"/>
+  <rect x="1" y="1" width="918" height="528" rx="8" fill="none" stroke="#351414"/>
+  <g stroke="#ffffff" stroke-opacity=".022">
+    <path d="M0 40H920 M0 80H920 M0 120H920 M0 160H920 M0 200H920 M0 240H920 M0 280H920 M0 320H920 M0 360H920 M0 400H920 M0 440H920 M0 480H920 M0 520H920"/>
+  </g>
+  <g class="scan" fill="#ff3333"><rect x="0" y="0" width="920" height="2"/></g>
+
+  <!-- ═══════════ PANEL C :: PIPELINE ═══════════ -->
+  <rect x="16" y="16" width="888" height="266" rx="6" fill="url(#panelBg2)" stroke="#351414"/>
+  <text x="32" y="38" class="mono panel-title">[ PIPELINE_FLOW ]</text>
+  <text x="888" y="38" class="mono panel-sub" text-anchor="end">data → model → service</text>
+  <line x1="28" y1="46" x2="892" y2="46" stroke="#2a0f0f"/>
+
+  <!-- Arrows between stages -->
+  <g fill="none" stroke="#8c1717" stroke-width="1.4" filter="url(#glow2)">
+    <line x1="174" y1="145" x2="206" y2="145" class="flow-line" marker-end="url(#arrow)"/>
+    <line x1="353" y1="145" x2="385" y2="145" class="flow-line" marker-end="url(#arrow)"/>
+    <line x1="532" y1="145" x2="564" y2="145" class="flow-line" marker-end="url(#arrow)"/>
+    <line x1="711" y1="145" x2="743" y2="145" class="flow-line" marker-end="url(#arrow)"/>
+  </g>
+
+  <!-- Feedback loop -->
+  <path d="M 818 190 L 818 238 Q 818 252 800 252 L 120 252 Q 102 252 102 238 L 102 190"
+        fill="none" stroke="#6b1d1d" stroke-width="1.2"
+        stroke-dasharray="4 4" marker-end="url(#arrowDim)"/>
+  <text x="460" y="272" class="mono muted" text-anchor="middle">continuous retrain loop · model feedback</text>
+
+  <!-- Stage nodes -->
+  <g>
+    <!-- INGEST -->
+    <rect x="32" y="100" width="140" height="90" rx="4" fill="#130a0a" stroke="#ff4545" stroke-opacity="0.55"/>
+    <text x="102" y="92" class="mono stage-index" text-anchor="middle">01 / INGEST</text>
+    <text x="102" y="126" class="mono stage-name" text-anchor="middle">INGEST</text>
+    <text x="102" y="142" class="mono stage-sub" text-anchor="middle">raw sensor feed</text>
+    <line x1="48" y1="152" x2="156" y2="152" stroke="#351414"/>
+    <text x="102" y="168" class="mono stage-metric" text-anchor="middle">12.4 MB/s</text>
+
+    <!-- CLEAN -->
+    <rect x="211" y="100" width="140" height="90" rx="4" fill="#130a0a" stroke="#ff4545" stroke-opacity="0.55"/>
+    <text x="281" y="92" class="mono stage-index" text-anchor="middle">02 / CLEAN</text>
+    <text x="281" y="126" class="mono stage-name" text-anchor="middle">CLEAN</text>
+    <text x="281" y="142" class="mono stage-sub" text-anchor="middle">normalize · dedupe</text>
+    <line x1="227" y1="152" x2="335" y2="152" stroke="#351414"/>
+    <text x="281" y="168" class="mono stage-metric" text-anchor="middle">99.2% valid</text>
+
+    <!-- TRAIN -->
+    <rect x="390" y="100" width="140" height="90" rx="4" fill="#130a0a" stroke="#ff4545" stroke-opacity="0.55"/>
+    <text x="460" y="92" class="mono stage-index" text-anchor="middle">03 / TRAIN</text>
+    <text x="460" y="126" class="mono stage-name" text-anchor="middle">TRAIN</text>
+    <text x="460" y="142" class="mono stage-sub" text-anchor="middle">fit · evaluate</text>
+    <line x1="406" y1="152" x2="514" y2="152" stroke="#351414"/>
+    <text x="460" y="168" class="mono stage-metric" text-anchor="middle">mAP 0.87</text>
+
+    <!-- SERVE -->
+    <rect x="569" y="100" width="140" height="90" rx="4" fill="#130a0a" stroke="#ff4545" stroke-opacity="0.55"/>
+    <text x="639" y="92" class="mono stage-index" text-anchor="middle">04 / SERVE</text>
+    <text x="639" y="126" class="mono stage-name" text-anchor="middle">SERVE</text>
+    <text x="639" y="142" class="mono stage-sub" text-anchor="middle">REST · gRPC</text>
+    <line x1="585" y1="152" x2="693" y2="152" stroke="#351414"/>
+    <text x="639" y="168" class="mono stage-metric" text-anchor="middle">~42ms p95</text>
+
+    <!-- MONITOR -->
+    <rect x="748" y="100" width="140" height="90" rx="4" fill="#1a0808" stroke="#ff4545" stroke-opacity="0.9"/>
+    <text x="818" y="92" class="mono stage-index" text-anchor="middle">05 / MONITOR</text>
+    <text x="818" y="126" class="mono stage-name" text-anchor="middle">MONITOR</text>
+    <text x="818" y="142" class="mono stage-sub" text-anchor="middle">metrics · drift</text>
+    <line x1="764" y1="152" x2="872" y2="152" stroke="#351414"/>
+    <text x="818" y="168" class="mono stage-metric" text-anchor="middle">live · alerting</text>
+  </g>
+</svg>

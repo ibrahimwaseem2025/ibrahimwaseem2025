@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" width="100%" height="auto" role="img" aria-label="Technology matrix radar and project nexus mind map">
+  <defs>
+    <linearGradient id="radarFill" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ff5555" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#990000" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="panelBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0e0707"/>
+      <stop offset="100%" stop-color="#080606"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glowStrong" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      .mono { font-family: "JetBrains Mono", "Fira Code", Consolas, monospace; }
+      .panel-title { fill: #ff4444; font-size: 11px; font-weight: 700; letter-spacing: 2px; }
+      .panel-sub { fill: #885555; font-size: 9px; letter-spacing: 0.5px; }
+      .axis-label { fill: #f0d8d8; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; }
+      .axis-pct { fill: #bbbbbb; font-size: 9px; }
+      .node-title { fill: #f0d8d8; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; }
+      .node-sub { fill: #aa8888; font-size: 8px; }
+      .muted { fill: #777777; font-size: 9px; }
+      .hub-title { fill: #ff6666; font-size: 12px; font-weight: 700; letter-spacing: 1.5px; }
+      .hub-sub { fill: #cc9999; font-size: 8px; letter-spacing: 1px; }
+      .pulse-dot { animation: pulseDot 2.4s ease-in-out infinite; }
+      .pulse-dot-slow { animation: pulseDot 3.2s ease-in-out infinite; }
+      .scan { animation: scan 5s ease-in-out infinite; }
+      @keyframes scan { 0%,100%{opacity:.08} 50%{opacity:.28} }
+      @keyframes pulseDot { 0%,100%{opacity:1} 50%{opacity:.25} }
+      @media (prefers-reduced-motion: reduce) { .scan,.pulse-dot,.pulse-dot-slow { animation: none; } }
+    </style>
+  </defs>
+
+  <rect width="920" height="500" fill="#080808"/>
+  <rect x="1" y="1" width="918" height="498" rx="8" fill="none" stroke="#351414"/>
+  <g stroke="#ffffff" stroke-opacity=".022">
+    <path d="M0 40H920 M0 80H920 M0 120H920 M0 160H920 M0 200H920 M0 240H920 M0 280H920 M0 320H920 M0 360H920 M0 400H920 M0 440H920 M0 480H920"/>
+  </g>
+  <g class="scan" fill="#ff3333"><rect x="0" y="0" width="920" height="2"/></g>
+
+  <!-- ═══════════ PANEL A :: RADAR ═══════════ -->
+  <rect x="16" y="16" width="436" height="468" rx="6" fill="url(#panelBg)" stroke="#351414"/>
+  <text x="32" y="38" class="mono panel-title">[ TECHNOLOGY_MATRIX ]</text>
+  <text x="436" y="38" class="mono panel-sub" text-anchor="end">8-axis skill radar</text>
+  <line x1="28" y1="46" x2="440" y2="46" stroke="#2a0f0f"/>
+
+  <!-- Grid rings -->
+  <g fill="none" stroke="#5a1f1f" stroke-width="0.8">
+    <polygon points="234,225 258.75,235.25 269,260 258.75,284.75 234,295 209.25,284.75 199,260 209.25,235.25" stroke-opacity="0.45"/>
+    <polygon points="234,190 283.50,210.50 304,260 283.50,309.50 234,330 184.50,309.50 164,260 184.50,210.50" stroke-opacity="0.55"/>
+    <polygon points="234,155 308.24,185.76 339,260 308.24,334.24 234,365 159.76,334.24 129,260 159.76,185.76" stroke-opacity="0.7"/>
+    <polygon points="234,120 332.99,161.01 374,260 332.99,358.99 234,400 135.01,358.99 94,260 135.01,161.01" stroke-opacity="0.85"/>
+  </g>
+
+  <!-- Axes -->
+  <g stroke="#6b2525" stroke-width="0.8">
+    <line x1="234" y1="260" x2="234" y2="120"/>
+    <line x1="234" y1="260" x2="332.99" y2="161.01"/>
+    <line x1="234" y1="260" x2="374" y2="260"/>
+    <line x1="234" y1="260" x2="332.99" y2="358.99"/>
+    <line x1="234" y1="260" x2="234" y2="400"/>
+    <line x1="234" y1="260" x2="135.01" y2="358.99"/>
+    <line x1="234" y1="260" x2="94" y2="260"/>
+    <line x1="234" y1="260" x2="135.01" y2="161.01"/>
+  </g>
+
+  <!-- Data polygon -->
+  <g filter="url(#glow)">
+    <polygon points="234,127 318.15,175.85 339,260 321.11,347.11 234,358 154.80,339.20 133.2,260 142.92,168.92"
+             fill="url(#radarFill)" stroke="#ff4545" stroke-width="1.8" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Data points -->
+  <g fill="#ff5555">
+    <circle cx="234" cy="127" r="2.5"/>
+    <circle cx="318.15" cy="175.85" r="2.5"/>
+    <circle cx="339" cy="260" r="2.5"/>
+    <circle cx="321.11" cy="347.11" r="2.5"/>
+    <circle cx="234" cy="358" r="2.5"/>
+    <circle cx="154.80" cy="339.20" r="2.5"/>
+    <circle cx="133.2" cy="260" r="2.5"/>
+    <circle cx="142.92" cy="168.92" r="2.5"/>
+  </g>
+
+  <!-- Axis labels -->
+  <g class="mono">
+    <text x="234" y="100" class="axis-label" text-anchor="middle">PYTHON</text>
+    <text x="234" y="112" class="axis-pct" text-anchor="middle">95%</text>
+
+    <text x="345.77" y="148.23" class="axis-label" text-anchor="start">ML / CV</text>
+    <text x="345.77" y="160.23" class="axis-pct" text-anchor="start">85%</text>
+
+    <text x="392" y="254" class="axis-label" text-anchor="start">DEVOPS</text>
+    <text x="392" y="266" class="axis-pct" text-anchor="start">75%</text>
+
+    <text x="345.77" y="371.77" class="axis-label" text-anchor="start">DATABASE</text>
+    <text x="345.77" y="383.77" class="axis-pct" text-anchor="start">88%</text>
+
+    <text x="234" y="418" class="axis-label" text-anchor="middle">C# / .NET</text>
+    <text x="234" y="430" class="axis-pct" text-anchor="middle">70%</text>
+
+    <text x="122.23" y="371.77" class="axis-label" text-anchor="end">PHP</text>
+    <text x="122.23" y="383.77" class="axis-pct" text-anchor="end">80%</text>
+
+    <text x="76" y="254" class="axis-label" text-anchor="end">REACT / JS</text>
+    <text x="76" y="266" class="axis-pct" text-anchor="end">72%</text>
+
+    <text x="122.23" y="148.23" class="axis-label" text-anchor="end">LINUX</text>
+    <text x="122.23" y="160.23" class="axis-pct" text-anchor="end">92%</text>
+  </g>
+
+  <text x="32" y="468" class="mono muted">8 axes · normalized 0–100 · self-assessment</text>
+
+  <!-- ═══════════ PANEL B :: MIND MAP ═══════════ -->
+  <rect x="468" y="16" width="436" height="468" rx="6" fill="url(#panelBg)" stroke="#351414"/>
+  <text x="484" y="38" class="mono panel-title">[ PROJECT_NEXUS ]</text>
+  <text x="888" y="38" class="mono panel-sub" text-anchor="end">4-node dependency graph</text>
+  <line x1="480" y1="46" x2="892" y2="46" stroke="#2a0f0f"/>
+
+  <!-- Connections -->
+  <g fill="none" stroke="#8c1717" stroke-width="1.5" filter="url(#glow)">
+    <path d="M 686 250 Q 610 160 560 113"/>
+    <path d="M 686 250 Q 762 160 812 113"/>
+    <path d="M 686 250 Q 610 340 560 387"/>
+    <path d="M 686 250 Q 762 340 812 387"/>
+  </g>
+
+  <!-- Traveling dots -->
+  <circle cx="620" cy="182" r="2" fill="#ff6666" class="pulse-dot"/>
+  <circle cx="752" cy="182" r="2" fill="#ff6666" class="pulse-dot-slow"/>
+  <circle cx="620" cy="318" r="2" fill="#ff6666" class="pulse-dot-slow"/>
+  <circle cx="752" cy="318" r="2" fill="#ff6666" class="pulse-dot"/>
+
+  <!-- Branch nodes -->
+  <g>
+    <rect x="490" y="90" width="140" height="46" rx="4" fill="#130a0a" stroke="#8c1717"/>
+    <text x="560" y="110" class="mono node-title" text-anchor="middle">HOUSING_4_RAAJJE</text>
+    <text x="560" y="126" class="mono node-sub" text-anchor="middle">API · React · PostgreSQL</text>
+
+    <rect x="742" y="90" width="140" height="46" rx="4" fill="#130a0a" stroke="#8c1717"/>
+    <text x="812" y="110" class="mono node-title" text-anchor="middle">UNDERWATER_DEBRIS</text>
+    <text x="812" y="126" class="mono node-sub" text-anchor="middle">YOLOv8 · FUnIE-GAN</text>
+
+    <rect x="490" y="364" width="140" height="46" rx="4" fill="#130a0a" stroke="#8c1717"/>
+    <text x="560" y="384" class="mono node-title" text-anchor="middle">FEDORA_LINUX</text>
+    <text x="560" y="400" class="mono node-sub" text-anchor="middle">KDE Plasma · daily driver</text>
+
+    <rect x="742" y="364" width="140" height="46" rx="4" fill="#130a0a" stroke="#8c1717"/>
+    <text x="812" y="384" class="mono node-title" text-anchor="middle">DEV_STACK</text>
+    <text x="812" y="400" class="mono node-sub" text-anchor="middle">Python · C# · PHP · Laravel</text>
+  </g>
+
+  <!-- Hub -->
+  <g filter="url(#glowStrong)">
+    <rect x="616" y="225" width="140" height="50" rx="6" fill="#1a0808" stroke="#ff4545" stroke-width="1.5"/>
+  </g>
+  <text x="686" y="246" class="mono hub-title" text-anchor="middle">ME</text>
+  <text x="686" y="262" class="mono hub-sub" text-anchor="middle">project_nexus</text>
+
+  <text x="484" y="468" class="mono muted">4 nodes · 4 edges · edge pulse = live activity</text>
+</svg>

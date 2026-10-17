@@ -1,22 +1,17 @@
 <!-- TOP HTML GIF BANNER & HUD ICONS -->
 
 
-<p align="center">
-  <code>Simplicity is prerequisite for reliability. // SYSTEM_READY</code>
-  <img src="dna.svg" width="100%" alt="Animated DNA telemetry">
-</p>
 <p>
   <hr>
   <samp>
     <code>iboo@Fedora:fastfetch</code>
   </samp>
-  <img src="info_rose.svg" width="100%" alt="info">
+  <img src="svg/info_dna.svg" width="100%" alt="info">
+  <img src="svg/spider.svg" width="100%" alt="info">
+  <img src="svg/flow_dia.svg" width=100% alt="info">
 </p>
 
 <p align="center">
   <hr>
-  <samp>
-    <code>iboo@Fedora:btop</code>
-  </samp>
-  <img src="table.svg" width="100%" alt="table">
+  <img src="svg/desc.svg" width="100%" alt="table">
 </p>
